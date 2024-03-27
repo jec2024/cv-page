@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>CV Portfolio</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="glass-container">
+        <!-- About Section -->
+        <div class="about-section section active">
+          <div class="main">
+            <div class="profile-pic">
+              <img src="assets/photo/IMG_7541.jpg" alt="Jec's Photo" />
+            </div>
+            <h2>Jesus Ricardo Ano</h2>
+            <p>You can call me Jec!</p>
+            <p>A computer science student at Ateneo de Davao University.</p>
+          </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="education-section section">
+          <div class="main">
+            <h2>Education</h2>
+            <div class="education-entry">
+              <h3>Chinese Language Program</h3>
+              <p>Nanjing Normal University</p>
+              <p>2018 - 2019</p>
+            </div>
+            <div class="education-entry">
+              <h3>Bachelor of Arts in Political Science</h3>
+              <p>Ateneo de Davao University</p>
+              <p>2019 - 2021</p>
+            </div>
+            <div class="education-entry">
+              <h3>Bachelor of Science in Computer Science</h3>
+              <p>Ateneo de Davao University</p>
+              <p>2021 - Present</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects-section section">
+          <div class="main">
+            <h2>Projects</h2>
+            <div class="project-entry">
+              <h3>Ongoing Project: mini-addu-sis</h3>
+              <p>
+                A mini version and recreation of the Ateneo de Davao University
+                Student Information System.
+              </p>
+              <div class="project-entry">
+                <h3>More Projects Coming Soon!</h3>
+                <p>
+                  Stay tuned for additional projects that will be added to this
+                  portfolio soon!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills-section section">
+          <div class="main">
+            <h2>Skills</h2>
+            <div class="skills-list">
+              <h3>Programming Languages</h3>
+              <ul>
+                <li>HTML/CSS/JS</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>PHP</li>
+              </ul>
+            </div>
+            <div class="skills-list">
+              <h3>Database Technologies</h3>
+              <ul>
+                <li>MySQL</li>
+              </ul>
+            </div>
+            <div class="skills-list">
+              <h3>Networking</h3>
+              <ul>
+                <li>Cisco CCNAv7</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation controls -->
+        <div class="carousel-controls">
+          <button class="prev-btn"><i class="ri-arrow-left-s-line"></i></button>
+          <button class="next-btn">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".section");
+        let index = 0;
+
+        function showSection(index) {
+          sections.forEach((section, i) => {
+            section.classList.remove("active"); // Remove from all sections first
+            if (i === index) {
+              section.classList.add("active");
+            }
+          });
+        }
+
+        function nextSection() {
+          index = (index + 1) % sections.length;
+          showSection(index);
+        }
+
+        function prevSection() {
+          index = (index - 1 + sections.length) % sections.length;
+          showSection(index);
+        }
+
+        document
+          .querySelector(".next-btn")
+          .addEventListener("click", nextSection);
+        document
+          .querySelector(".prev-btn")
+          .addEventListener("click", prevSection);
+      });
+    </script>
+  </body>
+</html>

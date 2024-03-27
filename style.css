@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box; 
+}
+
+body {
+    color: #fff;
+    background-color: #f0f4f8; 
+    background-image:
+        radial-gradient(at 9% 89%, hsla(215, 90%, 73%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 72% 6%, hsla(210, 60%, 90%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 24% 19%, hsla(210, 30%, 95%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 65% 6%, hsla(210, 20%, 98%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 20% 98%, hsla(210, 40%, 92%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 44% 9%, hsla(210, 25%, 96%, 0.5) 0px, transparent 50%),
+        radial-gradient(at 10% 9%, hsla(210, 10%, 99%, 0.5) 0px, transparent 50%);
+    min-height: 100vh;
+    margin: 0; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.glass-container {
+    width: 90%; 
+    max-width: 800px; 
+    height: 70vh;
+    overflow-y: auto;
+    min-height: 400px;
+    background: rgba(0, 0, 0, 0.56);
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.6px);
+    -webkit-backdrop-filter: blur(11.6px);
+}
+
+.main {
+    padding: 30px;
+}
+
+.main h2 {
+    font-size: 2rem;
+    margin-bottom: 15px; 
+}
+
+.main p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px; 
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 30px;
+}
+
+.carousel-controls button {
+    margin: 0 10px; 
+    padding: 5px 10px; 
+    font-size: 1rem; 
+    background: #f0f4f8; 
+    color: #333; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease; 
+}
+
+.carousel-controls button:hover {
+    background-color: #e0e5ec; 
+}
+
+
+.profile-pic {
+    text-align: center;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 720px) {
+    .carousel-controls {
+        bottom: 10px;
+    }
+    
+    .main h2 {
+        font-size: 2rem; 
+    }
+    
+    .profile-pic img {
+        width: 150px; 
+        height: 150px;
+    }
+    .glass-container {
+        height: 65vh; 
+      }
+}
+
+@media screen and (max-width: 1075px) {
+    .content {
+        flex-direction: column;
+    }
+    .glass-container {
+        height: 70vh; 
+      }
+}
